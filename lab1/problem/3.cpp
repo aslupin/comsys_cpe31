@@ -9,12 +9,15 @@ int main()
     for (i = 1; i < n; i++)
         C[A[i]]++;
     for (i = 2; i < k; i++)
+    {
         C[i] = C[i] + C[i - 1];
+    }
 
     for (i = n - 1; i >= 1; i--)
     {
         B[C[A[i]]] = A[i];
         C[A[i]]--;
+        printf(" %d", C[A[i]]);
     }
     printf("A[] = \n");
     for (i = 0; i < n; i++)
